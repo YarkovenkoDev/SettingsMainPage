@@ -15,6 +15,7 @@
 		7E4792BF28246EBF008F8453 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4792BE28246EBF008F8453 /* Settings.swift */; };
 		7E4792C228246FFC008F8453 /* StaticTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4792C128246FFC008F8453 /* StaticTableViewCell.swift */; };
 		7E4792C4282472D4008F8453 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4792C3282472D4008F8453 /* SwitchTableViewCell.swift */; };
+		7E4792C628247541008F8453 /* StatusTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4792C528247541008F8453 /* StatusTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		7E4792BE28246EBF008F8453 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		7E4792C128246FFC008F8453 /* StaticTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticTableViewCell.swift; sourceTree = "<group>"; };
 		7E4792C3282472D4008F8453 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
+		7E4792C528247541008F8453 /* StatusTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 				7E4792BE28246EBF008F8453 /* Settings.swift */,
 				7E4792C128246FFC008F8453 /* StaticTableViewCell.swift */,
 				7E4792C3282472D4008F8453 /* SwitchTableViewCell.swift */,
+				7E4792C528247541008F8453 /* StatusTableViewCell.swift */,
 			);
 			path = "Cells Settings";
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 				7E4792BF28246EBF008F8453 /* Settings.swift in Sources */,
 				7E4792A728246613008F8453 /* ViewController.swift in Sources */,
 				7E4792C4282472D4008F8453 /* SwitchTableViewCell.swift in Sources */,
+				7E4792C628247541008F8453 /* StatusTableViewCell.swift in Sources */,
 				7E4792A328246613008F8453 /* AppDelegate.swift in Sources */,
 				7E4792C228246FFC008F8453 /* StaticTableViewCell.swift in Sources */,
 			);

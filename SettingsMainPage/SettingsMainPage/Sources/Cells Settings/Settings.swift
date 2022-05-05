@@ -26,9 +26,17 @@ struct SettingsSwitchOption: Settings {
     var isOn: Bool
 }
 
+struct SettingsStatusOption: Settings {
+    var title: String
+    var icon: UIImage?
+    var iconBackgroundColor: UIColor
+    var statusTitle: String
+}
+
 enum SettingsOptionType {
     case staticCell(model: SettingsStaticOption)
     case switchCell(model: SettingsSwitchOption)
+    case statusCell(model: SettingsStatusOption)
 }
 
 struct Section {
