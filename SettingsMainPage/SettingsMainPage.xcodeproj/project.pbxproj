@@ -14,6 +14,7 @@
 		7E4792AF28246614008F8453 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E4792AD28246614008F8453 /* LaunchScreen.storyboard */; };
 		7E4792BF28246EBF008F8453 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4792BE28246EBF008F8453 /* Settings.swift */; };
 		7E4792C228246FFC008F8453 /* StaticTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4792C128246FFC008F8453 /* StaticTableViewCell.swift */; };
+		7E4792C4282472D4008F8453 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4792C3282472D4008F8453 /* SwitchTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		7E4792B028246614008F8453 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E4792BE28246EBF008F8453 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		7E4792C128246FFC008F8453 /* StaticTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticTableViewCell.swift; sourceTree = "<group>"; };
+		7E4792C3282472D4008F8453 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 			children = (
 				7E4792BE28246EBF008F8453 /* Settings.swift */,
 				7E4792C128246FFC008F8453 /* StaticTableViewCell.swift */,
+				7E4792C3282472D4008F8453 /* SwitchTableViewCell.swift */,
 			);
 			path = "Cells Settings";
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 			files = (
 				7E4792BF28246EBF008F8453 /* Settings.swift in Sources */,
 				7E4792A728246613008F8453 /* ViewController.swift in Sources */,
+				7E4792C4282472D4008F8453 /* SwitchTableViewCell.swift in Sources */,
 				7E4792A328246613008F8453 /* AppDelegate.swift in Sources */,
 				7E4792C228246FFC008F8453 /* StaticTableViewCell.swift in Sources */,
 			);

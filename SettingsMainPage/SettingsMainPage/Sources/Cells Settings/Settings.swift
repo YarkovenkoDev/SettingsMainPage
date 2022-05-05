@@ -19,8 +19,16 @@ struct SettingsStaticOption: Settings {
     var iconBackgroundColor: UIColor
 }
 
+struct SettingsSwitchOption: Settings {
+    var title: String
+    var icon: UIImage?
+    var iconBackgroundColor: UIColor
+    var isOn: Bool
+}
+
 enum SettingsOptionType {
     case staticCell(model: SettingsStaticOption)
+    case switchCell(model: SettingsSwitchOption)
 }
 
 struct Section {
