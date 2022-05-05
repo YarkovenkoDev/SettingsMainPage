@@ -18,6 +18,7 @@ class ViewController: UIViewController {
         var table = UITableView(frame: .zero, style: .grouped)
 
         table.register(StaticTableViewCell.self, forCellReuseIdentifier: StaticTableViewCell.identifier)
+        table.register(SwitchTableViewCell.self, forCellReuseIdentifier: SwitchTableViewCell.identifier)
 
         return table
     }()
@@ -59,8 +60,10 @@ class ViewController: UIViewController {
 
     func configure() {
         models.append(Section(options: [
+            .switchCell(model: SettingsSwitchOption(title: "Airplane Mode", icon: UIImage(systemName: "airplane"), iconBackgroundColor: .orange, isOn: true)),
             .staticCell(model: SettingsStaticOption(title: "Cellular", icon: UIImage(systemName: "antenna.radiowaves.left.and.right"), iconBackgroundColor: .systemGreen)),
             .staticCell(model: SettingsStaticOption(title: "Personal Hotspot", icon: UIImage(systemName: "personalhotspot"), iconBackgroundColor: .systemGreen)),
+            .switchCell(model: SettingsSwitchOption(title: "VPN", icon: UIImage(named: "vpn"), iconBackgroundColor: .systemBlue, isOn: true)),
                            ]))
 
         models.append(Section(options: [
@@ -102,17 +105,26 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
         let model = models[indexPath.section].options[indexPath.row]
 
         switch model.self {
-            case .staticCell(let model):
-                guard let cell = tableView.dequeueReusableCell(
-                    withIdentifier: StaticTableViewCell.identifier,
-                    for: indexPath
-                ) as? StaticTableViewCell else {
-                    return UITableViewCell()
-                }
-                cell.configure(with: model)
-                return cell
-        }
+        case .staticCell(let model):
+            guard let cell = tableView.dequeueReusableCell(
+                withIdentifier: StaticTableViewCell.identifier,
+                for: indexPath
+            ) as? StaticTableViewCell else {
+                return UITableViewCell()
+            }
+            cell.configure(with: model)
+            return cell
 
+        case .switchCell(let model):
+            guard let cell = tableView.dequeueReusableCell(
+                withIdentifier: SwitchTableViewCell.identifier,
+                for: indexPath
+            ) as? SwitchTableViewCell else {
+                return UITableViewCell()
+            }
+            cell.configure(with: model)
+            return cell
+        }
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
