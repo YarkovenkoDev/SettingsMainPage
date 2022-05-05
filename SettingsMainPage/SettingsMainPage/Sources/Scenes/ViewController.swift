@@ -14,6 +14,12 @@ class ViewController: UIViewController {
         return navigation
     }()
 
+    private lazy var tableView: UITableView = {
+        var table = UITableView(frame: .zero, style: .grouped)
+
+        return table
+    }()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
@@ -28,6 +34,7 @@ class ViewController: UIViewController {
 
     private func setupHieracly() {
         view.addSubview(navigationBar)
+        view.addSubview(tableView)
     }
 
     private func setupLayout() {
@@ -35,6 +42,12 @@ class ViewController: UIViewController {
         navigationBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
         navigationBar.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
         navigationBar.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
+
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.topAnchor.constraint(equalTo: navigationBar.bottomAnchor).isActive = true
+        tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
+        tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
     }
 
 }
