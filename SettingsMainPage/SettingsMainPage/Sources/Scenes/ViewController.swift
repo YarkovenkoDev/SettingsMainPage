@@ -19,6 +19,7 @@ class ViewController: UIViewController {
 
         table.register(StaticTableViewCell.self, forCellReuseIdentifier: StaticTableViewCell.identifier)
         table.register(SwitchTableViewCell.self, forCellReuseIdentifier: SwitchTableViewCell.identifier)
+        table.register(StatusTableViewCell.self, forCellReuseIdentifier: StatusTableViewCell.identifier)
 
         return table
     }()
@@ -61,9 +62,12 @@ class ViewController: UIViewController {
     func configure() {
         models.append(Section(options: [
             .switchCell(model: SettingsSwitchOption(title: "Airplane Mode", icon: UIImage(systemName: "airplane"), iconBackgroundColor: .orange, isOn: true)),
+            .statusCell(model: SettingsStatusOption(title: "Wi-Fi", icon: UIImage(systemName: "wifi"), iconBackgroundColor: .systemBlue, statusTitle: "Off")),
+            .statusCell(model: SettingsStatusOption(title: "Bluetooth", icon: UIImage(named: "bluetooth"), iconBackgroundColor: .systemBlue,  statusTitle: "On")),
             .staticCell(model: SettingsStaticOption(title: "Cellular", icon: UIImage(systemName: "antenna.radiowaves.left.and.right"), iconBackgroundColor: .systemGreen)),
             .staticCell(model: SettingsStaticOption(title: "Personal Hotspot", icon: UIImage(systemName: "personalhotspot"), iconBackgroundColor: .systemGreen)),
             .switchCell(model: SettingsSwitchOption(title: "VPN", icon: UIImage(named: "vpn"), iconBackgroundColor: .systemBlue, isOn: true)),
+
                            ]))
 
         models.append(Section(options: [
@@ -83,8 +87,7 @@ class ViewController: UIViewController {
             .staticCell(model: SettingsStaticOption(title: "Siri & Search", icon: UIImage(named: "siri"), iconBackgroundColor: .black)),
             .staticCell(model: SettingsStaticOption(title: "Face ID & Passcode", icon: UIImage(systemName: "faceid"), iconBackgroundColor: .systemGreen)),
                         ]))
-        }
-
+    }
 }
 
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
@@ -120,6 +123,16 @@ extension ViewController: UITableViewDelegate, UITableViewDataSource {
                 withIdentifier: SwitchTableViewCell.identifier,
                 for: indexPath
             ) as? SwitchTableViewCell else {
+                return UITableViewCell()
+            }
+            cell.configure(with: model)
+            return cell
+
+        case .statusCell(let model):
+            guard let cell = tableView.dequeueReusableCell(
+                withIdentifier: StatusTableViewCell.identifier,
+                for: indexPath
+            ) as? StatusTableViewCell else {
                 return UITableViewCell()
             }
             cell.configure(with: model)
